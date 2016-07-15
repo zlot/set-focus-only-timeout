@@ -1,44 +1,38 @@
-/**
- * Idea originally from @Šime Vidas: http://stackoverflow.com/questions/5766263/run-settimeout-only-when-tab-is-active
- * Acts just like window.setTimeout except that it counts down only when the window is in focus.
- */
+'use strict';
+
 (function(window) {
 
-    window.setFocusOnlyTimeout = function(cb, timeout) {
-        return focusOnlyTimeout(cb, timeout);
-    };
-
-    // private
     function focusOnlyTimeout(cb, timeout) {
-        var delta = 100;
 
-        var blurred;
+        var started = new Date();
+        var remaining = timeout;
 
-        function setStateToBlurred() {
-            blurred = true;
-        }
-        function setStateToFocus() {
-            blurred = false;
-        }
-
-        window.addEventListener('blur', setStateToBlurred);
-        window.addEventListener('focus', setStateToFocus);
-
-        var intervalId = window.setInterval(function() {
-            if(blurred) {
-                return;
-            }
-            timeout -= delta;
-            console.log(timeout);
-            if(timeout <= 0) {
-                window.clearInterval(intervalId);
-                window.removeEventListener('blur', setStateToBlurred);
-                window.removeEventListener('focus', setStateToFocus);
+        function start() {
+            return window.setTimeout(function() {
                 cb();
-            }
-        }, delta);
+                ifvisible.off('blur');
+                ifvisible.off('focus');
+            }, remaining);
+        }
 
-        return intervalId;
+        ifvisible.on('blur', hasBlurred);
+        ifvisible.on('focus', hasFocused);
+        var timeoutId = start();
+
+        function hasBlurred() {
+            console.log('clearing timeout:', timeoutId);
+            clearTimeout(timeoutId);
+            remaining -= new Date() - started;
+            console.log('Has blurred! time remaining:', remaining);
+        }
+        function hasFocused() {
+            started = new Date();
+            timeoutId = start();
+            console.log('Has focused! time remaining:', remaining);
+        }
+        return timeoutId;
     }
+
+    window.setFocusOnlyTimeout = focusOnlyTimeout;
 
 })(window);
