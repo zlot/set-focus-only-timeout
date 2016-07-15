@@ -1,0 +1,3 @@
+[submodule "vendor/ifvisible.js"]
+	path = vendor/ifvisible.js
+	url = git://github.com/serkanyersen/ifvisible.js.git
