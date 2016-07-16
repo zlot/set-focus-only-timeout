@@ -1,0 +1,34 @@
+{
+  "name": "set-focus-only-timeout",
+  "version": "0.0.1",
+  "description": "A setTimeout that counts down only when the browser window is focused (via the Page Visibility API)",
+  "main": "set-focus-only-timeout.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "ifvisible.js": "^1.0.6"
+  },
+  "devDependencies": {
+    "nightwatch": "^0.9.5"
+  },
+  "scripts": {
+    "test": "test.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlot/set-focus-only-timeout.git"
+  },
+  "keywords": [
+    "setTimeout",
+    "focus",
+    "timeout",
+    "visibility"
+  ],
+  "author": "Mark C Mitchell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zlot/set-focus-only-timeout/issues"
+  },
+  "homepage": "https://github.com/zlot/set-focus-only-timeout#readme"
+}
