@@ -1,3 +1,6 @@
-Acts just like window.setTimeout except will count down only when the window is in focus.
+setFocusOnlyTimeout acts just like setTimeout, except it will countdown only when the browser window is visible.
 
-Idea originally from [Šime Vidas's](http://stackoverflow.com/users/425275/%c5%a0ime-vidas) response to the stack overflow question [Run setTimeout only when tab is active](http://stackoverflow.com/questions/5766263/run-settimeout-only-when-tab-is-active)
+Please note that this might have behaviour a bit different to what you expect. It uses the [ifvisible](https://github.com/serkanyersen/ifvisible.js/) 
+library by [serkanyersen](https://github.com/serkanyersen) for browser compatibility, which in turn relies on the Page Visibility API. 
+See [ifvisible](https://github.com/serkanyersen/ifvisible.js/) for more info about the nuances of when a page is considered "visible".
+
