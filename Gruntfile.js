@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         browserify: {
             all: {
-                src: 'set-focus-only-timeout.js',
+                src: 'src/set-focus-only-timeout.js',
                 dest: 'dist/set-focus-only-timeout.js'
             }
         },
