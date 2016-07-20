@@ -8,14 +8,13 @@
 <body>
     <div id="mocha"></div>
 
-    <script src="node_modules/ifvisible.js/src/ifvisible.min.js"></script>
-    <script src="src/set-focus-only-timeout.js"></script>
+    <script src="../dist/set-focus-only-timeout.js"></script>
 
-    <script src="node_modules/mocha/mocha.js"></script>
-    <script src="node_modules/chai/chai.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
     
     <script>mocha.setup('bdd')</script>
-    <script src="test/test.js"></script>
+    <script src="test.js"></script>
     
     <script>
         mocha.run();
