@@ -1,2 +1,5 @@
 node_modules/
 selenium-debug.log
+
+test/bin/
+test/reports/
