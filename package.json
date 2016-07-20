@@ -20,7 +20,7 @@
     "nightwatch": "^0.9.5"
   },
   "scripts": {
-    "test": "test.html"
+    "test": "open test/test.html"
   },
   "repository": {
     "type": "git",
