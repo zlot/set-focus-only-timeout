@@ -1,6 +1,6 @@
 {
   "name": "set-focus-only-timeout",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A setTimeout that counts down only when the browser window is focused (via the Page Visibility API)",
   "main": "src/set-focus-only-timeout.js",
   "directories": {
