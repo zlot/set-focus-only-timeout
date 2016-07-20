@@ -12,7 +12,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
-    "nightwatch": "^0.9.5"
+    "nightwatch": "^0.9.5",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0"
   },
   "scripts": {
     "test": "test.html"
