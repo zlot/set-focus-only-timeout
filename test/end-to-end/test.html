@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selenium end-to-end test</title>
+    <script src="../../dist/set-focus-only-timeout.js"></script>
+</head>
+<body>
+    setFocusOnlyTimeout is set to 1000ms.
+    <script>
+        setFocusOnlyTimeout(function() {
+            var successDiv = document.createElement('div');
+            successDiv.style.backgroundColor = 'limegreen';
+            successDiv.style.color = 'white';
+            successDiv.textContent = 'setFocusOnlyTimeout ran its callback.';
+            successDiv.id = 'success';
+            document.body.appendChild(successDiv);
+        }, 1000);
+    </script>
+
+</body>
+</html>
