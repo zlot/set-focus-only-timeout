@@ -30,7 +30,8 @@
     "setTimeout",
     "focus",
     "timeout",
-    "visibility"
+    "visibility",
+    "ecosystem:browser"
   ],
   "author": "Mark C Mitchell",
   "license": "ISC",
