@@ -1,16 +1,27 @@
 setFocusOnlyTimeout acts just like setTimeout, except it will countdown only when the browser window is visible.
 
-Please note that this might have behaviour a bit different to what you expect. It uses the [ifvisible](https://github.com/serkanyersen/ifvisible.js/) 
-library by [serkanyersen](https://github.com/serkanyersen) for browser compatibility, which in turn relies on the Page Visibility API. 
-See [ifvisible](https://github.com/serkanyersen/ifvisible.js/) for more info about the nuances of when a page is considered "visible".
+Please note that the browsers definition of "visible" might be a tad different to what you expect, so test it out! 
+It uses the [ifvisible](https://github.com/serkanyersen/ifvisible.js/) library by [serkanyersen](https://github.com/serkanyersen) 
+for browser compatibility, which in turn relies on the Page Visibility API. See [ifvisible](https://github.com/serkanyersen/ifvisible.js/) 
+for more info about the nuances of when a page is considered "visible".
 
-# Usage
+## Usage
+
+Include in a script tag the `set-focus-only-timeout.min.js` file found in `dist/`. Then:
 
     window.setFocusOnlyTimeout(action, delay);
-    
 
-## Install via npm
+## Install via npm and Browserify for use
+
     npm install set-focus-only-timeout
+
+Then: 
+
+    var setFocusOnlyTimeout = require('set-focus-only-timeout');
+
+*Note:*: This is a client-side-specific package, so it only makes sense when bundled up via Browserify or some other manager 
+for use in a browser. See the `Gruntfile` for how the `dist/` files have been browserified.
+
 
 ## Run unit tests
 
